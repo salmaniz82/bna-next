@@ -8,9 +8,9 @@ const features = [
   {
     title: (
        <>
-        <span className="font-serif italic font-bold text-2xl md:text-3xl">English and Russian</span>
+        <span className="font-serif italic font-bold">English and Russian</span>
         <br />
-        <span className="font-sans font-bold text-2xl md:text-3xl mt-1 block">Speaking Accountants</span>
+        <span className="font-sans font-bold mt-1 block">Speaking Accountants</span>
        </>
     ),
     description:
@@ -20,9 +20,9 @@ const features = [
   {
     title: (
         <>
-         <span className="font-serif italic font-bold text-2xl md:text-3xl">Personal Account</span>
+         <span className="font-serif italic font-bold">Personal Account</span>
          <br />
-         <span className="font-sans font-bold text-2xl md:text-3xl mt-1 block">Management</span>
+         <span className="font-sans font-bold mt-1 block">Management</span>
         </>
      ),
     description:
@@ -32,9 +32,9 @@ const features = [
   {
     title: (
         <>
-         <span className="font-serif italic font-bold text-2xl md:text-3xl">Reliable and Flexible</span>
+         <span className="font-serif italic font-bold">Reliable and Flexible</span>
          <br />
-         <span className="font-sans font-bold text-2xl md:text-3xl mt-1 block">Team</span>
+         <span className="font-sans font-bold mt-1 block">Team</span>
         </>
      ),
     description:
@@ -79,26 +79,35 @@ export default function ParallaxFeatures() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.8, delay: index * 0.2, ease: "easeOut" }}
-                className="flex flex-row md:flex-col items-start md:items-center text-left md:text-center group px-4 gap-6 md:gap-0"
+                className="flex flex-col items-start md:items-center text-left md:text-center group px-4"
               >
-                <div className="shrink-0 relative w-16 h-16 md:w-20 md:h-20 md:mb-8">
-                  <Image 
-                    src={feature.image} 
-                    alt="" 
-                    fill
-                    className="object-contain brightness-0 invert" 
-                  />
+                {/* Header Group: Mobile (Row), Desktop (Col) */}
+                <div className="flex flex-row md:flex-col items-center md:items-center gap-4 md:gap-0 w-full mb-3 md:mb-6">
+                    <div className="shrink-0 relative w-12 h-12 md:w-20 md:h-20 md:mb-8">
+                        <Image 
+                            src={feature.image} 
+                            alt="" 
+                            fill
+                            className="object-contain brightness-0 invert" 
+                        />
+                    </div>
+                    
+                    <h3 className="leading-snug md:leading-tight">
+                        {/* Adjust font sizes for mobile/desktop inside the title prop or here if it was string */}
+                        {/* Since title is a ReactNode with spans, we need to rely on the classes in the data object or override them. 
+                            The data object uses: text-2xl md:text-3xl. 
+                            Request: "reduce the line height for heading a little small font".
+                            We should check the data object definition above. 
+                        */}
+                       <div className="[&>span]:text-lg [&>span]:md:text-3xl [&>span]:leading-tight">
+                        {feature.title}
+                       </div>
+                    </h3>
                 </div>
                 
-                <div>
-                    <h3 className="mb-2 md:mb-6 leading-tight">
-                    {feature.title}
-                    </h3>
-                    
-                    <p className="text-gray-300 text-base leading-relaxed">
-                    {feature.description}
-                    </p>
-                </div>
+                <p className="text-gray-300 text-sm md:text-base leading-relaxed pl-1">
+                  {feature.description}
+                </p>
               </motion.div>
             );
           })}
