@@ -10,6 +10,8 @@ export const metadata: Metadata = {
   description: "Insights, news, and updates from BNA Consulting.",
 };
 
+export const dynamic = 'force-dynamic';
+
 // Define SearchParams type for Next.js 15+
 type SearchParams = Promise<{ [key: string]: string | string[] | undefined }>;
 

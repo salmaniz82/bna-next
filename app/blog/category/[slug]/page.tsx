@@ -10,6 +10,8 @@ import { notFound } from "next/navigation";
 type SearchParams = Promise<{ [key: string]: string | string[] | undefined }>;
 type Params = Promise<{ slug: string }>;
 
+export const dynamic = 'force-dynamic';
+
 export async function generateMetadata(props: { params: Params }): Promise<Metadata> {
   const params = await props.params;
   const categories = await fetchCategories();

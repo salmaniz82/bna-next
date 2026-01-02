@@ -4,6 +4,7 @@ import "./globals.css";
 
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { Suspense } from "react";
 
 const playfair = Playfair_Display({
   variable: "--font-playfair",
@@ -21,6 +22,7 @@ export const metadata: Metadata = {
 };
 
 import PageTransition from "@/components/PageTransition";
+import GlobalLoader from "@/components/ui/GlobalLoader";
 
 export default function RootLayout({
   children,
@@ -32,6 +34,9 @@ export default function RootLayout({
       <body
         className={`${playfair.variable} ${mulish.variable} antialiased`}
       >
+        <Suspense fallback={null}>
+            <GlobalLoader />
+        </Suspense>
         <Navbar />
         <PageTransition>
             {children}

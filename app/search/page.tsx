@@ -9,6 +9,8 @@ export const metadata: Metadata = {
   description: "Search results for BNA Consulting blog.",
 };
 
+export const dynamic = 'force-dynamic';
+
 type SearchParams = Promise<{ [key: string]: string | string[] | undefined }>;
 
 export default async function SearchPage(props: {
