@@ -1,19 +1,15 @@
-import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import CorePillars from "@/components/CorePillars";
 import Services from "@/components/Services";
-import Footer from "@/components/Footer";
 // About import removed
 
 export default function Home() {
   return (
     <main className="min-h-screen">
-      <Navbar />
       <Hero />
       <CorePillars />
       <AboutSection /> 
       <Services />
-      <Footer />
     </main>
   );
 }

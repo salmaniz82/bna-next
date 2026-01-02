@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import { Playfair_Display, Mulish } from "next/font/google";
 import "./globals.css";
 
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+
 const playfair = Playfair_Display({
   variable: "--font-playfair",
   subsets: ["latin"],
@@ -17,6 +20,8 @@ export const metadata: Metadata = {
   description: "Expert team of English and Russian speaking accountants in London.",
 };
 
+import PageTransition from "@/components/PageTransition";
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -27,7 +32,11 @@ export default function RootLayout({
       <body
         className={`${playfair.variable} ${mulish.variable} antialiased`}
       >
-        {children}
+        <Navbar />
+        <PageTransition>
+            {children}
+        </PageTransition>
+        <Footer />
       </body>
     </html>
   );

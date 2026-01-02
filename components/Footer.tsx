@@ -1,14 +1,26 @@
 import { Facebook, Instagram, Twitter, Linkedin } from "lucide-react";
+import Link from "next/link";
+import Image from "next/image";
 
 export default function Footer() {
   return (
     <footer className="bg-[#1a1a1a] text-white pt-16 pb-8">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
-          {/* Column 1: Contact */}
-          <div>
-            <h3 className="font-serif text-xl font-bold mb-6 text-primary">Contact Us</h3>
-            <div className="space-y-4 text-gray-400 font-sans text-sm">
+          {/* Column 1: Brand & Contact */}
+          <div className="space-y-6">
+            <div className="relative w-48 h-16">
+                 <Image 
+                    src="https://bnaconsulting.co.uk/wp-content/uploads/2019/09/bna-1.png"
+                    alt="BNA Consulting"
+                    fill
+                    className="object-contain object-left"
+                 />
+            </div>
+            <p className="text-gray-400 font-sans text-sm leading-relaxed">
+                We are experienced and qualified English and Russian speaking executive Accounting & Consulting firm based in London.
+            </p>
+            <div className="space-y-2 text-gray-400 font-sans text-sm pt-2">
               <p>1 Kingdom Street, Paddington, <br />London, W2 6BD</p>
               <p>Phone: <span className="text-white">0208 991 991 0</span></p>
               <p>Email: <span className="text-white">info@bnaconsulting.co.uk</span></p>
@@ -19,7 +31,7 @@ export default function Footer() {
           <div>
             <h3 className="font-serif text-xl font-bold mb-6 text-primary">Quick Links</h3>
             <ul className="space-y-3 text-gray-400 font-sans text-sm">
-              <li><a href="#" className="hover:text-primary transition-colors">About</a></li>
+              <li><Link href="/about-us" className="hover:text-primary transition-colors">About</Link></li>
               <li><a href="#" className="hover:text-primary transition-colors">Services</a></li>
               <li><a href="#" className="hover:text-primary transition-colors">Testimonials</a></li>
               <li><a href="#" className="hover:text-primary transition-colors">Contact</a></li>

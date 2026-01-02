@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState, useEffect } from "react";
 import { Phone, Mail, MapPin, Search, Menu, X } from "lucide-react";
 
@@ -37,15 +38,21 @@ export default function Navbar() {
       <div className={`bg-white transition-all duration-300 ${isScrolled ? "py-2" : "py-4"}`}>
         <div className="container mx-auto px-4 flex justify-between items-center">
           {/* Logo */}
-          <Link href="/" className="flex flex-col items-center group">
-            <span className="font-serif text-3xl font-bold tracking-widest text-secondary group-hover:opacity-80 transition-opacity">BNA</span>
-            <span className="text-[0.6rem] tracking-[0.3em] text-gray-500 uppercase">Consulting</span>
+          <Link href="/" className="flex items-center">
+             <Image 
+                src="https://bnaconsulting.co.uk/wp-content/uploads/2019/08/bnatp.png"
+                alt="BNA Consulting"
+                width={200}
+                height={60}
+                className="h-12 w-auto object-contain"
+                priority
+             />
           </Link>
 
           {/* Desktop Menu */}
           <nav className="hidden md:flex items-center gap-8 font-sans font-medium text-secondary">
             <Link href="/" className="text-primary font-bold">Home</Link>
-            <Link href="/about" className="hover:text-primary transition-colors">About Us</Link>
+            <Link href="/about-us" className="hover:text-primary transition-colors">About Us</Link>
             <div className="group relative">
               <button className="flex items-center gap-1 hover:text-primary transition-colors">
                 Services <span className="text-xs">▼</span>
@@ -75,7 +82,7 @@ export default function Navbar() {
         <div className="md:hidden bg-white border-t border-gray-100 absolute w-full shadow-lg">
           <nav className="flex flex-col p-4 space-y-4 font-sans text-secondary">
             <Link href="/" onClick={() => setMobileMenuOpen(false)} className="text-primary font-bold">Home</Link>
-            <Link href="/about" onClick={() => setMobileMenuOpen(false)}>About Us</Link>
+            <Link href="/about-us" onClick={() => setMobileMenuOpen(false)}>About Us</Link>
             <Link href="/services" onClick={() => setMobileMenuOpen(false)}>Services</Link>
             <Link href="/contact" onClick={() => setMobileMenuOpen(false)}>Contact</Link>
           </nav>
