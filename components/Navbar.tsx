@@ -84,6 +84,7 @@ export default function Navbar() {
             <Link href="/" onClick={() => setMobileMenuOpen(false)} className="text-primary font-bold">Home</Link>
             <Link href="/about-us" onClick={() => setMobileMenuOpen(false)}>About Us</Link>
             <Link href="/services" onClick={() => setMobileMenuOpen(false)}>Services</Link>
+            <Link href="/blog" onClick={() => setMobileMenuOpen(false)}>Blog</Link>
             <Link href="/contact" onClick={() => setMobileMenuOpen(false)}>Contact</Link>
           </nav>
         </div>

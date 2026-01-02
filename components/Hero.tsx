@@ -7,8 +7,7 @@ import { useState, useEffect } from "react";
 
 const slides = [
   {
-    image:
-      "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?q=80&w=2070&auto=format&fit=crop",
+    image: "/images/bna-hero-01-full.webp",
     subtitle: "OUR SOLUTIONS SPEAK FOR THEMSELVES",
     title: (
       <>
@@ -20,8 +19,7 @@ const slides = [
       "We offer a vast range of services making sure it is hassle free with perfection and delivered on time.",
   },
   {
-    image:
-      "https://plus.unsplash.com/premium_photo-1661377022073-0352b0cf01c1?q=80&w=870&auto=format&fit=crop",
+    image: "/images/bna-hero-02-full.webp",
     subtitle: "YOUR SUCCESS IS OUR REPUTATION",
     title: (
       <>
@@ -33,8 +31,7 @@ const slides = [
       "Navigate complex financial landscapes with confidence through our tailored consulting services.",
   },
   {
-    image:
-      "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop",
+    image: "/images/bna-hero-03-full.webp",
     subtitle: "DEDICATED TO YOUR BUSINESS",
     title: (
       <>

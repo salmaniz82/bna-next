@@ -79,9 +79,9 @@ export default function ParallaxFeatures() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.8, delay: index * 0.2, ease: "easeOut" }}
-                className="flex flex-col items-center group px-4"
+                className="flex flex-row md:flex-col items-start md:items-center text-left md:text-center group px-4 gap-6 md:gap-0"
               >
-                <div className="mb-8 relative w-20 h-20">
+                <div className="shrink-0 relative w-16 h-16 md:w-20 md:h-20 md:mb-8">
                   <Image 
                     src={feature.image} 
                     alt="" 
@@ -90,13 +90,15 @@ export default function ParallaxFeatures() {
                   />
                 </div>
                 
-                <h3 className="mb-6 leading-tight">
-                  {feature.title}
-                </h3>
-                
-                <p className="text-gray-300 text-base leading-relaxed">
-                  {feature.description}
-                </p>
+                <div>
+                    <h3 className="mb-2 md:mb-6 leading-tight">
+                    {feature.title}
+                    </h3>
+                    
+                    <p className="text-gray-300 text-base leading-relaxed">
+                    {feature.description}
+                    </p>
+                </div>
               </motion.div>
             );
           })}
