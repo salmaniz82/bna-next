@@ -10,7 +10,14 @@ import { notFound } from "next/navigation";
 type SearchParams = Promise<{ [key: string]: string | string[] | undefined }>;
 type Params = Promise<{ slug: string }>;
 
-export const dynamic = 'force-dynamic';
+export const revalidate = 3600; // Revalidate every hour
+
+export async function generateStaticParams() {
+  const categories = await fetchCategories();
+  return categories.map((category) => ({
+    slug: category.slug,
+  }));
+}
 
 export async function generateMetadata(props: { params: Params }): Promise<Metadata> {
   const params = await props.params;
